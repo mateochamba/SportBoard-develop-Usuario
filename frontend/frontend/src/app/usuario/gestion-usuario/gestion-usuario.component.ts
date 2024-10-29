@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CrearUsuarioComponent } from '../crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
 import { AlertboxComponent } from './alertbox/alertbox.component';
+import { CommonModule } from '@angular/common';
 
 export interface PeriodicElement {
   nro: number;
@@ -36,7 +37,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-gestion-usuario',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, CommonModule],
   templateUrl: './gestion-usuario.component.html',
   styleUrls: ['./gestion-usuario.component.scss'],
 })
@@ -72,6 +73,8 @@ export class GestionUsuarioComponent {
     });
     throw new Error('Method not implemented.');
   }
+
+  showText: boolean = false;
 
 }
 

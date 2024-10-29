@@ -1,7 +1,7 @@
 <div class="button-container-User">
-    <button mat-button (click)="openDialogCrearUser()" style="background-color: black; color: white">
+    <button mat-button (click)="openDialogCrearUser()" style="background-color: black; color: white; justify-content: flex-end;" (mouseenter)="showText = true" (mouseleave)="showText = false">
         <mat-icon>person_add</mat-icon>
-        Crear usuario
+        <span *ngIf="showText">Crear usuario</span>
     </button>
 </div>
 

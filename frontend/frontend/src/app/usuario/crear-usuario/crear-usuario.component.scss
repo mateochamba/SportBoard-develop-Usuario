@@ -9,8 +9,14 @@
 }
 
 ::ng-deep .mat-mdc-form-field {
-    --mdc-filled-text-field-container-color: transparent; // input default background color
-    --mdc-filled-text-field-label-text-size: 15px; // input label font-size
-    --mdc-filled-text-field-label-text-tracking: .1rem; // input label letter-spacing
-    --mdc-filled-text-field-label-text-weight: 400; // input label font-weight
+    --mdc-filled-text-field-container-color: transparent; 
+    --mdc-filled-text-field-label-text-size: 15px; 
+    --mdc-filled-text-field-label-text-tracking: .1rem; 
+    --mdc-filled-text-field-label-text-weight: 400; 
+}
+
+.button-container-crear-usuario {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
 }

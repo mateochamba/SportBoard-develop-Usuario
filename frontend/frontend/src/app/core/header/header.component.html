@@ -8,13 +8,8 @@
         <button mat-icon-button>
             <mat-icon>notifications</mat-icon>
         </button>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon>
+        <button mat-icon-button class="login-button" (click)="navigateToInicioSesion()">
+            <mat-icon>account_circle</mat-icon> Sign In
         </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="navigateToInicioSesion()">Iniciar Sesión</button>
-            <button mat-menu-item (click)="navigateToRegistro()">Registrarse</button>
-            <botton mat-menu-item (click)="navigateToPerfil()">Perfil</botton>
-        </mat-menu>
     </mat-toolbar>
 </header>

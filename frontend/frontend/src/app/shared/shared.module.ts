@@ -12,6 +12,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu'; // Importa MatMenuModule
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [],
@@ -28,7 +32,11 @@ import { MatMenuModule } from '@angular/material/menu'; // Importa MatMenuModule
         MatTableModule,
         MatTabsModule,
         MatToolbarModule,
-        MatMenuModule
+        MatMenuModule, // Exporta MatMenuModule
+        MatInputModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
     ],
 })
 export class SharedModule {}

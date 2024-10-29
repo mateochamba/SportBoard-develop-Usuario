@@ -18,12 +18,10 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     UsuarioRoutingModule,
-    MatButtonModule,
+    MatInputModule,
     MatCardModule,
-    MatInputModule, 
-    MatIconModule,
-    InicioSesionComponent,
-    RegistroComponent
+    MatButtonModule,
+    MatIconModule
   
   ]
 })

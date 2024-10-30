@@ -12,18 +12,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
     @Output() toggleSidebar = new EventEmitter<void>();
 
-    constructor(private router: Router){}
+    constructor(private router: Router) {}
 
-        navigateToInicioSesion() {
-            this.router.navigate(['/usuarios/inicio-sesion']);
-        }
-        
-        navigateToRegistro() {
-            this.router.navigate(['/usuarios/registro']);
-        }
-
-        navigateToPerfil() {
-            this.router.navigate(['/usuarios/perfil']);
-        }
-    
+    navigateToInicioSesion() {
+        this.router.navigate(['/usuarios/inicio-sesion']);
+    }
 }

@@ -5,6 +5,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { SharedModule } from './shared/shared.module';
 
+
 @Component({
     selector: 'app-root',
     standalone: true,

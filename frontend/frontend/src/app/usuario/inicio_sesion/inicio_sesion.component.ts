@@ -1,31 +1,34 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-inicio-sesion',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+
   templateUrl: './inicio_sesion.component.html',
-  styleUrls: ['./inicio_sesion.component.scss'],
-
+  styleUrls: ['./inicio_sesion.component.scss']
 })
+
 export class InicioSesionComponent {
-  hide = true;
+  username: string = '';
+  password: string = '';
+  hide: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
-    navigateToRegistro(){
-      this.router.navigate(['usuarios/registro']);
-    }
+  login() {
+    this.http.post('http://localhost:4200/accounts/login/', {
+      username: this.username,
+      password: this.password
+    }).subscribe(response => {
+      console.log('Login successful', response);
+      this.router.navigate(['/home']);
+    }, error => {
+      console.error('Login failed', error);
+    });
   }
+  navigateToRegister() {
+    this.router.navigate(['/usuarios/registro']);
+  }
+}

@@ -5,26 +5,34 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-registro',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent {
-  hide = true;  // Variable para controlar la visibilidad de la contraseña
+  username: string = '';
+  password: string = '';
+  email: string = '';
+  hide: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  navigateToInicioSesion() {
-    this.router.navigate(['/usuarios/inicio-sesion']);
+  register() {
+    this.http.post('http://localhost:4200/accounts/register/', {
+      username: this.username,
+      password: this.password,
+      email: this.email
+    }).subscribe(response => {
+      console.log('Registration successful', response);
+      this.router.navigate(['/login']);
+    }, error => {
+      console.error('Registration failed', error);
+    });
+  }
+  navigateToLoginInicioSession() {
+    this.router.navigate(['/login']);
   }
 }
